@@ -65,4 +65,11 @@ function updateScreen(){
      let image=document.getElementById("hangmanpic");
      image.src=`images/hangman${guessCount}.gif`;
     
+     if (clueString.indexOf("_") <0 && word !=""){
+        guessArea.textContent += "You WON"
+     }
+
+     if(guessCount==0){
+        guessArea.textContent += "You Lost";
+     }
 }
