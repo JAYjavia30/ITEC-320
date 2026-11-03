@@ -29,6 +29,11 @@ function guess(){
         return;
     }
 
+    let clue= document.getElementById("clue");
+if (clue.textContent.indexOf("_")<0 && word !=""){
+    return;
+}
+
 
     if(word.indexOf(letter)<0){
         guessCount--;
