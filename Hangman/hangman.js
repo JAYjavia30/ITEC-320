@@ -18,6 +18,8 @@ function newgame(){
 
 function guess(){
     let input= document.getElementById("guess");
+    let letter= input.value.toLowerCase();
+
     let letter= input.value;
     if(word.indexOf(letter)<0){
         guessCount--;
