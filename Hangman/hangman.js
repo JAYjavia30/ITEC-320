@@ -40,6 +40,7 @@ if (clue.textContent.indexOf("_")<0 && word !=""){
     }
 
     guesses+= letter;
+    input.value ="";
     updateScreen();
     
 }
