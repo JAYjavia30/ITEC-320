@@ -18,21 +18,30 @@ function newgame(){
 }
 
 function guess(){
+
+    if (word==""){
+        return;
+    }
+
     let input= document.getElementById("guess");
-    let letter= input.value.toLowerCase();
+    let letter= input.value;
+    letter= letter.toLowerCase();
 
-    if (letter === "" || guesses.indexOf(letter)>=0) {
+    if ( guesses.indexOf(letter)>=0) {
         return;
     }
 
-    if (guessCount ==0){
-        return;
+    let clueString="";
+
+    for(let i=0; i< word.length; i++){
+        if(guesses.indexOf(word.charAt(i))<0){
+            clueString += "_";
+        }
     }
 
-    let clue= document.getElementById("clue");
-if (clue.textContent.indexOf("_")<0 && word !=""){
-    return;
-}
+    if (guessCount ==0 || clueString.indexOf("_")<0){
+        return;
+    }
 
 
     if(word.indexOf(letter)<0){
@@ -66,10 +75,10 @@ function updateScreen(){
      image.src=`images/hangman${guessCount}.gif`;
     
      if (clueString.indexOf("_") <0 && word !=""){
-        guessArea.textContent += "You WON"
+        guessArea.textContent += " - You WON"
      }
 
      if(guessCount==0){
-        guessArea.textContent += "You Lost";
+        guessArea.textContent += " - You Lost";
      }
 }
