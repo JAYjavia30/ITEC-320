@@ -9,7 +9,8 @@ let guessCount = MAX_GUSSES;
    
 function newgame(){
     guesses="";
-    guessCount=MAX_GUSSES; 
+    guessCount=MAX_GUSSES;
+
      let randomIndex= parseInt(Math.random()* POSSIBLE_WORDS.length);
       word= POSSIBLE_WORDS[randomIndex];
       updateScreen();
@@ -20,11 +21,14 @@ function guess(){
     let input= document.getElementById("guess");
     let letter= input.value.toLowerCase();
 
-    if (letter === "" || guesses.indexOf(letter)>=0 || guessCount <=0){
+    if (letter === "" || guesses.indexOf(letter)>=0) {
         return;
     }
 
-    
+    if (guessCount ==0){
+        return;
+    }
+
 
     if(word.indexOf(letter)<0){
         guessCount--;
