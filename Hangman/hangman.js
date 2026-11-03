@@ -9,6 +9,7 @@ let guessCount = MAX_GUSSES;
    
 function newgame(){
     guesses="";
+    guessCount=MAX_GUSSES;
      let randomIndex= parseInt(Math.random()* POSSIBLE_WORDS.length);
       word= POSSIBLE_WORDS[randomIndex];
       updateScreen();
