@@ -19,9 +19,11 @@ function newgame(){
 
 function guess(){
 
+    // Dont allow guesses before a word is chosen
     if (word==""){
         return;
     }
+
     let input= document.getElementById("guess");
     let letter= input.value;
     letter= letter.toLowerCase();
@@ -30,10 +32,12 @@ function guess(){
         return;
     }
 
+    //Dont let it guess previously guessed letters 2x
     if ( guesses.indexOf(letter)>=0) {
         return;
     }
 
+    // Dont alllow guesses when the game is finsihed
     let clueString="";
 
     for(let i=0; i< word.length; i++){
@@ -52,6 +56,8 @@ function guess(){
     }
 
     guesses+= letter;
+
+    // Clears the input field on guess
     input.value ="";
     updateScreen();
     
@@ -77,6 +83,7 @@ function updateScreen(){
      let image=document.getElementById("hangmanpic");
      image.src=`images/hangman${guessCount}.gif`;
     
+     // Dialog for winning and losing 
      if (clueString.indexOf("_") <0 && word !=""){
         guessArea.textContent += " - You WON"
      }
