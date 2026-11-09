@@ -22,10 +22,13 @@ function guess(){
     if (word==""){
         return;
     }
-
     let input= document.getElementById("guess");
     let letter= input.value;
     letter= letter.toLowerCase();
+
+    if (letter==""){
+        return;
+    }
 
     if ( guesses.indexOf(letter)>=0) {
         return;
