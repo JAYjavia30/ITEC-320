@@ -1,4 +1,4 @@
-let squarearea = document.getElementById("squarearea");
+let squareArea = document.getElementById("squareArea");
 let squareCount = parseInt(Math.random() *21) + 30; // 30-50
 
 for (let i = 0; i < squareCount; i++) {
@@ -8,7 +8,7 @@ square.style.backgroundColor=getRandomColor();
 
    square.style.top=parseInt(Math.random() * (300-50))+ "px";
     square.style.left=parseInt(Math.random() *(700-50)) + "px";
-    squarearea.append(square);
+    squareArea.append(square);
 }
 
 function getRandomColor() {
