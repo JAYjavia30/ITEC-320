@@ -14,6 +14,7 @@ square.style.backgroundColor=getRandomColor();
 function getRandomColor() {
     let possibleLetters="0123456789ABCDEF";
     let color="#";
+    
     for (let i = 0; i < 6; i++) {
         let position = parseInt(Math.random() * possibleLetters.length);
         color+=possibleLetters.charAt(position);
