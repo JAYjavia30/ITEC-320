@@ -2,19 +2,28 @@ let squareArea = document.querySelector("#squarearea");
 let squareCount = parseInt(Math.random()*21)+30; //30-50
 document.querySelector('#add').onclick = addSquare;
 
+let topZ=0;
+
 function addSquare(){
     let square = document.createElement("div");
     square.className = "square";
     square.style.backgroundColor=getRandomColor();
     square.style.top = parseInt(Math.random()*(300-50))+"px";
     square.style.left = parseInt(Math.random()*(700-50))+"px";
-    squareArea.append(square);
-
+    
     let size =parseInt(Math.random()*11) + 45;
     square.style.width = square.style.height = size + "px";
+
+    square.onclick = function(){
+        if (square.style.Zindex == topZ && topZ>0){
+            square.remove();
+        }
+        else{
+            square.style.ZIndex= ++topZ;
+        }
+    };
     squareArea.append(square);
 }
-
 
 for(let i = 0; i < squareCount; i++){
     addSquare();
