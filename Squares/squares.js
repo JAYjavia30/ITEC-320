@@ -28,3 +28,9 @@ function getRandomColor(){
     return color;
 }
 
+document.querySelector("#colors").onclick=changeColors;
+function changeColors(){
+    square.style.backgroundColor=getRandomColor();
+}
+}}
+
