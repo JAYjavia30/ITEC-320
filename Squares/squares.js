@@ -29,8 +29,11 @@ function getRandomColor(){
 }
 
 document.querySelector("#colors").onclick=changeColors;
+
 function changeColors(){
-    square.style.backgroundColor=getRandomColor();
+    let squares=document.querySelectorAll(".square");
+    for(let i=0; i<squares.length;i++){
+    squares.style.backgroundColor=getRandomColor();
 }
-}}
+}
 
