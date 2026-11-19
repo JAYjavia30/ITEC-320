@@ -9,6 +9,10 @@ function addSquare(){
     square.style.top = parseInt(Math.random()*(300-50))+"px";
     square.style.left = parseInt(Math.random()*(700-50))+"px";
     squareArea.append(square);
+
+    let size =parseInt(Math.random()*11) + 45;
+    square.style.width = square.style.height = size + "px";
+    squareArea.append(square);
 }
 
 
@@ -33,7 +37,7 @@ document.querySelector("#colors").onclick=changeColors;
 function changeColors(){
     let squares=document.querySelectorAll(".square");
     for(let i=0; i<squares.length;i++){
-    squares.style.backgroundColor=getRandomColor();
+    squares[i].style.backgroundColor=getRandomColor();
 }
 }
 
