@@ -15,13 +15,15 @@ function addSquare(){
     square.style.width = square.style.height = size + "px";
 
     square.onclick = function(){
-        if (square.style.Zindex == topZ && topZ>0){
+        if (square.style.zIndex == topZ && topZ>0){
             square.remove();
         }
         else{
-            square.style.ZIndex= ++topZ;
+            topZ++;
+            square.style.zIndex=topZ;
         }
     };
+
     squareArea.append(square);
 }
 
