@@ -14,7 +14,7 @@ function addSquare(){
     let size =parseInt(Math.random()*11) + 45;
     square.style.width = square.style.height = size + "px";
 
-    square.onclick = function(){
+    square.onclick = () =>{
         if (square.style.zIndex == topZ && topZ>0){
             square.remove();
         }
