@@ -12,7 +12,8 @@ function addSquare(){
     square.style.left = parseInt(Math.random()*(700-50))+"px";
     
     let size =parseInt(Math.random()*11) + 45;
-    square.style.width = square.style.height = size + "px";
+    square.style.width= size + "px";
+    square.style.height= size + "px";
 
     square.onclick = () =>{
         if (square.style.zIndex == topZ && topZ>0){
