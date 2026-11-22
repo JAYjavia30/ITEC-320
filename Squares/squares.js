@@ -28,9 +28,11 @@ function addSquare(){
     squareArea.append(square);
 }
 
+window.onload = () =>{
 for(let i = 0; i < squareCount; i++){
     addSquare();
 }
+};
 
 function getRandomColor(){
     let possibleLetters = "0123456789ABCDEF";
