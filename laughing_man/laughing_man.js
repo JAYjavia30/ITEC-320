@@ -8,6 +8,7 @@ firstSquare.addEventListener("click", ()=>{
     alert("OMG YOU CLCIKED ME");
 });
 
+// All other Squares
 for(let i=0; i<SQUARE_COUNT; i++){
     let square= document.createElement("img");
     square.src="laughing_man.jpg";
@@ -16,5 +17,20 @@ for(let i=0; i<SQUARE_COUNT; i++){
     square.style.left="225px";
     square.style.top="175px";
     box.appendChild(square);
-
 }
+
+Array.from(box.children).forEach(
+    (element) =>{
+        let dx = 2;
+        let dy = 2;
+        let x = parseInt(element.style.left);
+        let y = parseInt(element.style.top);
+        setInterval(()=>{
+            x = x + dx;
+            y = y + dy;
+            element.style.left = x + "px";
+            element.style.top = y + "px";
+
+        },100);
+    }
+)
